@@ -1,0 +1,26 @@
+{
+  "name": "Motion",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cottongit0/Motion.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cottongit0/Motion/issues"
+  },
+  "homepage": "https://github.com/cottongit0/Motion#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.32.13",
+    "typescript": "^4.2.4"
+  }
+}
