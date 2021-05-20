@@ -1,3 +1,4 @@
+import { NoteComponent } from "./components/page/item/note";
 import { VideoComponent } from "./components/page/item/video";
 import { ImageComponent } from "./components/page/item/image";
 import { PageComponent } from "./components/page/item/page";
@@ -12,6 +13,9 @@ class App {
       "https://i.picsum.photos/id/902/536/354.jpg?hmac=4WH85q7uEdOeEmbcRc7lkRgcUFZimMZtYXqFroCGh0Y"
     );
     image.attachTo(appRoot, "beforeend");
+
+    const note = new NoteComponent("Note Title", "내용을 작성해주세요.");
+    note.attachTo(appRoot, "beforeend");
 
     const video = new VideoComponent(
       "Video Title",
