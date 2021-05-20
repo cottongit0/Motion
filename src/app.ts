@@ -1,3 +1,4 @@
+import { TodoComponent } from "./components/page/item/todo";
 import { NoteComponent } from "./components/page/item/note";
 import { VideoComponent } from "./components/page/item/video";
 import { ImageComponent } from "./components/page/item/image";
@@ -16,6 +17,9 @@ class App {
 
     const note = new NoteComponent("Note Title", "내용을 작성해주세요.");
     note.attachTo(appRoot, "beforeend");
+
+    const todo = new TodoComponent("Todo Title", "오늘의 할 일을 입력해주세요");
+    todo.attachTo(appRoot, "beforeend");
 
     const video = new VideoComponent(
       "Video Title",
