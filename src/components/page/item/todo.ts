@@ -1,6 +1,6 @@
-import { BaseCompoment } from "./../../component";
+import { BaseComponent } from "./../../component";
 
-export class TodoComponent extends BaseCompoment<HTMLElement> {
+export class TodoComponent extends BaseComponent<HTMLElement> {
   constructor(title: string, todo: string) {
     super(`<section class="todo">
             <h2 class="todo__title"></h2>

@@ -1,6 +1,6 @@
-import { BaseCompoment } from "./../../component";
+import { BaseComponent } from "./../../component";
 
-export class NoteComponent extends BaseCompoment<HTMLElement> {
+export class NoteComponent extends BaseComponent<HTMLElement> {
   constructor(title: string, body: string) {
     super(`<section class="note">
             <h2 class="note__title"></h2>

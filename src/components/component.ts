@@ -6,7 +6,7 @@ export interface Component {
   removeFrom(parent: HTMLElement): void;
 }
 
-export class BaseCompoment<T extends HTMLElement> implements Component {
+export class BaseComponent<T extends HTMLElement> implements Component {
   protected readonly element: T;
   constructor(htmlString: string) {
     const template = document.createElement("template");

@@ -1,4 +1,4 @@
-import { BaseCompoment, Component } from "./../../component";
+import { BaseComponent, Component } from "./../../component";
 
 export interface Composable {
   addChild(child: Component): void;
@@ -15,7 +15,7 @@ type SectionContainerConstructor = {
 };
 
 export class PageItemComponent
-  extends BaseCompoment<HTMLElement>
+  extends BaseComponent<HTMLElement>
   implements SectionContainer
 {
   private closeListener?: OnCloseListener;
@@ -45,7 +45,7 @@ export class PageItemComponent
 }
 
 export class PageComponent
-  extends BaseCompoment<HTMLUListElement>
+  extends BaseComponent<HTMLUListElement>
   implements Composable
 {
   constructor(private pageItemConstructor: SectionContainerConstructor) {
