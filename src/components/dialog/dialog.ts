@@ -22,9 +22,10 @@ export class InputDialog
 
   constructor() {
     super(`<section class="dialog">
-            <button class="close">&times;</button>
-            <div id="dialog__body"></div>
-            <button class="dialog__submit">ADD</button>
+            <div id="dialog__body">
+              <button class="close">&times;</button>
+              <button class="dialog__submit">ADD</button>
+            </div> 
           </section>`);
 
     const closeBtn = this.element.querySelector(".close")! as HTMLElement;

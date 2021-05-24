@@ -22,7 +22,7 @@ export class PageItemComponent
   constructor() {
     super(`<li class="page-item">
             <section class="page-item__body"></section>
-            <div class="page-item_-controls">
+            <div class="page-item__controls">
               <button class="close">&times;</button>
             </div>
           </li>`);
