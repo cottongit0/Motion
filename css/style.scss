@@ -30,12 +30,43 @@ label {
   color: $text-accent-color;
 }
 
+button {
+  background: transparent;
+  border: 0;
+  outline: 0;
+}
+
+input,
+textarea {
+  background-color: $text-edit-bg-color;
+  color: $smokywhite;
+  font-size: 1.5em;
+}
+
+.close {
+  align-self: flex-end;
+  padding: 0.2rem;
+  color: $accent-color;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 3px;
+  transition: color 250ms ease;
+  &:hover,
+  &:focus {
+    transform: scale(1.5);
+    color: $shadow-color;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
 .app {
   width: 100%;
   max-width: 1000px;
   height: 100%;
   display: flex;
   flex-direction: column;
+
   // BANNER
   .banner {
     background: $bg-main-color;
@@ -85,6 +116,69 @@ label {
     &::-webkit-scrollbar-thumb {
       background-color: $accent-color;
     }
+    .page-item {
+      margin: 1.5em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 2px 2px 6px $shadow-color;
+      background: $component-bg-gradient;
+      .page-item__controls {
+        padding-right: 0.5em;
+      }
+      .page-item__body {
+        color: $smokywhite;
+        width: 100%;
+        .page-item__title {
+          color: $text-accent-color;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  .video,
+  .image {
+    display: flex;
+    width: 100%;
+    height: 250px;
+    .video__player,
+    .image__holder {
+      flex: 60% 1 1;
+    }
+    .video__title,
+    .image__title {
+      flex: 40% 1 1;
+      margin-left: 0.5em;
+      margin-top: 0.5em;
+    }
+
+    .video__iframe {
+      border: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    .image__thumbnail {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .note {
+    padding: 0.5em;
+    .note__title,
+    .note__body {
+      padding: 0.5em;
+      color: $smokywhite;
+    }
+  }
+  .todo {
+    padding: 0.5em;
+    .todo__title,
+    .todo-label {
+      padding: 0.5em;
+      color: $smokywhite;
+    }
   }
 
   // FOOTER
@@ -93,4 +187,81 @@ label {
     border-top: 1px solid $border-color;
     text-align: center;
   }
+}
+
+// DIALOG
+.dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 1.2rem;
+  background-color: $document-bg-color;
+  #dialog__body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0.4em;
+    width: 32em;
+    background: $bg-accent-color;
+    background: $component-bg-gradient;
+    border: 1px solid $border-color;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 20px $shadow-color;
+    .form__container {
+      label,
+      input {
+        margin-top: 12px;
+      }
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1em;
+    }
+    .close {
+      position: absolute;
+    }
+  }
+  .dialog__submit {
+    align-self: flex-end;
+    padding: 0.5em 1.5em;
+    margin: 0.1em 0.2em;
+    text-align: center;
+    user-select: none;
+    padding: 1em 3em;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: white;
+    background-color: $accent-color;
+    border-color: $accent-color;
+    border-radius: 2px;
+  }
+}
+
+// DRAG
+.mute-children * {
+  pointer-events: none;
+}
+
+.lifted {
+  animation: drag_start 250ms;
+  opacity: 0.2;
+}
+
+@keyframes drag_start {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+.drop-area {
+  border: 2px solid $accent-color;
 }
